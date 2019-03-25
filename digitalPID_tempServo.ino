@@ -12,7 +12,7 @@ String ki;
 String kd;
 
 int setPoint = 108; //110 nominally corresponds to a setPoint of 21.0C (R = 36.46k)
-const int dt = 10000; //Update every dt ms
+const int dt = 30000; //Update every dt ms
 const int gainSign = -1;
 const int windupError = 20;
 

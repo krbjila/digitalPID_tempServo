@@ -5,7 +5,7 @@
 ADDRESS = '/dev/ttyACM0'
 
 ### Save file default path
-DEFAULTPATH = '/media/Seagate/DATA/TemperatureLogging/'
+DEFAULTPATH = '/media/krbdata/logging/experimentTemperature/'
 
 
 ### Default PID parameters 
