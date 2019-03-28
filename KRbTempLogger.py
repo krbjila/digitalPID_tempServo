@@ -122,7 +122,7 @@ class userInterface(QtGui.QWidget):
                         self.indicator.color = QtGui.QColor(0,128,0,255)
                         self.indicator.update() 
 		else:
-			self.listener.terminate()
+                        self.listener.wait()
 			self.buttonRun.setText('Start Logging!')
                         self.indicator.color = QtGui.QColor(210,0,0,255)
                         self.indicator.update() 

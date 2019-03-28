@@ -78,7 +78,7 @@ class listenerThread(QtCore.QThread):
 	def run(self):
 		NBYTES = 12
 		self.arduino.reset_input_buffer()
-		while True:
+		while self.running:
 			if self.running:
 				try:
 					x = self.arduino.read(NBYTES)
