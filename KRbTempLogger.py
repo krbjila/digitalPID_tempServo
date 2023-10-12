@@ -186,9 +186,9 @@ class userInterface(QtGui.QWidget):
             influxdb_url, influxdb_org, influxdb_bucket
         )
         request_headers = {
-            "Authorization: Token {}".format(influxdb_token),
-            "Content-Type: text/plain; charset=utf-8",
-            "Accept: application/json",
+            "Authorization": "Token {}".format(influxdb_token),
+            "Content-Type": "text/plain; charset=utf-8",
+            "Accept": "application/json",
         }
         request_data = "temperature,sensor=TableServo temp={:.2f}".format(T)
         try:
