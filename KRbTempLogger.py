@@ -166,10 +166,15 @@ class userInterface(QtGui.QWidget):
         self.arduino.reset_input_buffer()
 
         if os.path.isdir(DEFAULTPATH):
-            fileName = "krbTemperature_" + datetime.now().strftime("%Y%m%d") + ".dat"
-        file = open(DEFAULTPATH + fileName, "a")
-        file.write("{}\t{:.2f}\n".format(datetime.now().strftime("%X"), T))
-        file.close()
+            try:
+                fileName = (
+                    "krbTemperature_" + datetime.now().strftime("%Y%m%d") + ".dat"
+                )
+                file = open(DEFAULTPATH + fileName, "a")
+                file.write("{}\t{:.2f}\n".format(datetime.now().strftime("%X"), T))
+                file.close()
+            except Exception as e:
+                print("Error writing to file: {}".format(e))
 
         # log to influxdb with requests
         influxdb_url = INFLUXDB_URL
